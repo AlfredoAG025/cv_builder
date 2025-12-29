@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Builder</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.js"
-        integrity="sha384-ezjq8118wdwdRMj+nX4bevEi+cDLTbhLAeFF688VK8tPDGeLUe0WoY2MZtSla72F"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,7 +17,7 @@
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
             <form hx-post="{% url 'resumes:preview' %}" hx-trigger="input delay:500ms" hx-target="#preview">
-                {{ form.as_p }}
+                {{ form }}
             </form>
 
             <form method="post" action="{% url 'resumes:create' %}">
