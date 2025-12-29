@@ -18,13 +18,9 @@
         <div>
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
-            <form hx-post="{% url 'resumes:preview' %}" hx-trigger="blur from:input" hx-target="#preview">
+            <div hx-post="{% url 'resumes:preview' %}" hx-trigger="blur from:input" hx-target="#preview">
                 {{ form }}
-
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2">
-                    Preview
-                </button>
-            </form>
+            </div>
 
             <form method="post" action="{% url 'resumes:create' %}">
                 {% csrf_token %}
