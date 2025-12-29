@@ -19,7 +19,7 @@ def resume_preview(request):
     if form.is_valid():
         resume = form.cleaned_data
     else:
-        resume = {}
+        resume = form.cleaned_data
 
     return render(
         request,
