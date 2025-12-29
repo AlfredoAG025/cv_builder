@@ -6,5 +6,5 @@ app_name = 'resumes'
 
 urlpatterns = [
     path('editor/', resume_create, name='create'),
-    path('preview/', resume_preview, name='resume_preview'),
+    path('preview/', resume_preview, name='preview'),
 ]
