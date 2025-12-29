@@ -19,7 +19,7 @@
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
             <form hx-get="{% url 'resumes:preview' %}" hx-trigger="input changed delay:500ms" hx-target="#preview">
-                {{ form }}
+                <input type="text" name="first_name" id="id_first_name">
             </form>
 
             <form method="post" action="{% url 'resumes:create' %}">
