@@ -18,7 +18,7 @@
         <div>
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
-            <div hx-post="{% url 'resumes:preview' %}" hx-trigger="blur from:input" hx-target="#preview">
+            <div hx-post="{% url 'resumes:preview' %}" hx-trigger="input change delay:500ms" hx-target="#preview">
                 {{ form }}
             </div>
 
