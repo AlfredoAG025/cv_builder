@@ -18,7 +18,7 @@
         <div>
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
-            <form hx-post="{% url 'resumes:preview' %}" hx-trigger="input[event.target.matches('input')] changed delay:500ms" hx-target="#preview">
+            <form novalidate hx-post="{% url 'resumes:preview' %}" hx-trigger="input changed delay:500ms" hx-target="#preview">
                 {{ form }}
             </form>
 
