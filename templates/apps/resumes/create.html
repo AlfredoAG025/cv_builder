@@ -1,5 +1,42 @@
-Create CV
+<!DOCTYPE html>
+<html lang="en">
 
-{{ form }}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Builder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.js"
+        integrity="sha384-ezjq8118wdwdRMj+nX4bevEi+cDLTbhLAeFF688VK8tPDGeLUe0WoY2MZtSla72F"
+        crossorigin="anonymous"></script>
+</head>
 
+<body>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
 
+        <!-- FORM -->
+        <div>
+            <h2 class="text-xl font-bold mb-4">Crear CV</h2>
+
+            <form hx-post="{% url 'resumes:preview' %}" hx-trigger="keyup changed delay:500ms" hx-target="#preview">
+                {{ form.as_p }}
+            </form>
+
+            <form method="post" action="{% url 'resumes:create' %}">
+                {% csrf_token %}
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2">
+                    Guardar CV
+                </button>
+            </form>
+        </div>
+
+        <!-- PREVIEW -->
+        <div id="preview">
+            {% include "apps/resumes/preview.html" %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>
