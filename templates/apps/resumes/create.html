@@ -18,11 +18,10 @@
         <div>
             <h2 class="text-xl font-bold mb-4">Crear CV</h2>
 
-            <form>
+            <form hx-post="{% url 'resumes:preview' %}" hx-trigger="input delay:500ms" hx-target="#preview">
                 {{ form }}
 
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2" hx-post="{% url 'resumes:preview' %}"
-                    hx-trigger="click" hx-target="#preview">
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2">
                     Preview
                 </button>
             </form>
