@@ -1,10 +1,10 @@
 from django.urls import path
 
-from apps.resumes.views import create_cv
+from apps.resumes.views import resume_create, resume_preview
 
 app_name = 'resumes'
 
 urlpatterns = [
-    path('editor/', create_cv, name='create'),
-    path('preview/', create_cv, name='resume_preview'),
+    path('editor/', resume_create, name='create'),
+    path('preview/', resume_preview, name='resume_preview'),
 ]
